@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.4.1
+
+env:
+  - DB=postgresql
+
+addons:
+  postgresql: "9.4"
+
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
+
+before_script:
+  - psql -c 'create database photography_backend_test;' -U postgres
+
+bundler_args: --binstubs=./bundler_stubs
