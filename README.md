@@ -1,4 +1,6 @@
 # Simple backend application (Photography website)
+![build + tests](https://travis-ci.org/13LD/photography-backend.svg?branch=master)
+
 
 ### List of gems 
 
