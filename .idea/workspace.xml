@@ -2,77 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a99e6a0-c4f9-4d68-a427-0214a768864f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/photography_backend.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Rakefile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/channels/application_cable/channel.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/channels/application_cable/connection.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/commands/authenticate_user.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/commands/authorize_api_request.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/controllers/concerns/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/jobs/application_job.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/application_record.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/concerns/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/mailer.html.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/mailer.text.erb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bin/bundle" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bin/rails" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bin/rake" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bin/setup" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bin/spring" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bin/update" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config.ru" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/boot.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/cable.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/database.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/environment.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/environments/test.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/initializers/application_controller_renderer.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/initializers/backtrace_silencers.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/initializers/cors.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/initializers/filter_parameter_logging.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/initializers/inflections.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/initializers/mime_types.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/initializers/wrap_parameters.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/locales/en.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/puma.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/secrets.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/spring.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20180306144924_create_users.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/false," />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/json_web_token.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/log/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/robots.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/controllers/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/files/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/users.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/integration/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/mailers/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/models/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/models/user_test.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/test_helper.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/.keep" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/.keep" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -98,26 +28,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/schema.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20180306144924_create_users.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20180306144924_create_users.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -138,7 +48,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -147,6 +67,16 @@
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -218,6 +148,7 @@
         <option value="$PROJECT_DIR$/app/commands/authenticate_user.rb" />
         <option value="$PROJECT_DIR$/app/commands/authorize_api_request.rb" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -265,76 +196,7 @@
             <path>
               <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="commands" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="migrate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="fixtures" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photography_backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photography_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -564,18 +426,25 @@
       <workItem from="1517426215721" duration="995000" />
       <workItem from="1518357504932" duration="2220000" />
       <workItem from="1518471249311" duration="13000" />
-      <workItem from="1520341301313" duration="5492000" />
+      <workItem from="1520341301313" duration="6463000" />
     </task>
+    <task id="LOCAL-00001" summary="travis.yml">
+      <created>1520359184301</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1520359184302</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12158000" />
+    <option name="totallyTimeSpent" value="13129000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="280" y="23" width="1400" height="983" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -601,19 +470,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="travis.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="travis.yml" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="57" lean-forward="false" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -917,14 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180306145256_remove_name_from_table_user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -953,14 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/json_web_token.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1013,6 +862,30 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/json_web_token.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
