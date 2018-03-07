@@ -1,6 +1,6 @@
 # Simple backend application (Photography website)
 ![build + tests](https://travis-ci.org/13LD/photography-backend.svg?branch=master)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/0c6f9817b8dd5329bd3f/maintainability)](https://codeclimate.com/github/13LD/photography-backend/maintainability)
 
 ## Benefits of token-based authentication
 #### There are several benefits to using such approach:
