@@ -13,10 +13,13 @@ env:
 addons:
   postgresql: "9.4"
 
+notifications:
+    - false
+
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-  - bundle exec rspec spec/
+  - bundle exec rspec spec
 
 before_script:
   - psql -c 'create database photography_backend_test;' -U postgres
@@ -27,4 +30,4 @@ before_script:
 bundler_args: --binstubs=./bundler_stubs
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - bundle exec rake coveralls:push
