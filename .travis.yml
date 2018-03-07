@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
+    - CC_TEST_REPORTER_ID=19ede9da3de7582a10ae21503862b544ee508ecbadf00c421f96e35c78f2cbef
 
 
 language: ruby
@@ -19,10 +19,11 @@ script:
 
 before_script:
   - psql -c 'create database photography_backend_test;' -U postgres
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
-  - bundle exec rspec
 
 bundler_args: --binstubs=./bundler_stubs
 
