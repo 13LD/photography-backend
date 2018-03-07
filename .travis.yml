@@ -6,6 +6,7 @@ deploy:
   provider: heroku
   api_key:
     secure: "9bf5d451-324c-47d0-a09c-d6eb8b568937"
+  app: photography-back
   run:
     - "rake db:migrate"
     - restart
