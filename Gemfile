@@ -28,15 +28,21 @@ gem 'jwt'
 # A simple, standardized way to build and use Service Objects (aka Commands) in Ruby
 gem 'simple_command'
 
+# Validate e-mail addresses against RFC 2822 and RFC 3696
+gem 'validates_email_format_of'
+
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :developmentl
+# gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
 gem "simplecov", :require => false, :group => :test
 
+
 group :development, :test do
+  gem "rspec-rails"
+  gem 'factory_bot'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

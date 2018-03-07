@@ -17,7 +17,7 @@
 - Because the application does not rely on cookies for authentication, it is invulnerable cross site request attacks.
 #### Performance
 - In terms of server-side load, a network roundtrip (e.g. finding a session on database) is likely to take more time than calculating an HMACSHA256 code to validate a token and parsing its contents, making token-based authentication faster than the traditional alternative.
-### List of gems 
+## List of gems 
 
 ```ruby
 ### Gems for JWT auth
