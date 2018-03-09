@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a99e6a0-c4f9-4d68-a427-0214a768864f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/commands/authenticate_user.rb" afterPath="$PROJECT_DIR$/app/commands/authenticate_user.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api/posts_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api/users_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/coverage/.last_run.json" afterPath="$PROJECT_DIR$/coverage/.last_run.json" />
-      <change beforePath="$PROJECT_DIR$/coverage/.resultset.json" afterPath="$PROJECT_DIR$/coverage/.resultset.json" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/api/posts_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/api/posts_controller_spec.rb" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/api/users_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/api/users_controller_spec.rb" />
-      <change beforePath="$PROJECT_DIR$/spec/factories.rb" afterPath="$PROJECT_DIR$/spec/factories.rb" />
+      <change beforePath="$PROJECT_DIR$/Rakefile" afterPath="$PROJECT_DIR$/Rakefile" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,11 +70,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authenticate_user.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="authenticate_user.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/commands/authenticate_user.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
               <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rakefile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Rakefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -104,16 +105,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authentication_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/authentication_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -167,7 +158,6 @@
         <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
         <option value="$PROJECT_DIR$/.coveralls.yml" />
-        <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/spec/models/user_spec.rb" />
@@ -187,6 +177,7 @@
         <option value="$PROJECT_DIR$/spec/controllers/api/users_controller_spec.rb" />
         <option value="$PROJECT_DIR$/app/commands/authorize_api_request.rb" />
         <option value="$PROJECT_DIR$/app/commands/authenticate_user.rb" />
+        <option value="$PROJECT_DIR$/Rakefile" />
       </list>
     </option>
   </component>
@@ -603,7 +594,7 @@
       <workItem from="1520530220288" duration="2024000" />
       <workItem from="1520546965621" duration="726000" />
       <workItem from="1520554190151" duration="580000" />
-      <workItem from="1520617111788" duration="9242000" />
+      <workItem from="1520617111788" duration="9345000" />
     </task>
     <task id="LOCAL-00001" summary="travis.yml">
       <created>1520359184301</created>
@@ -623,7 +614,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48054000" />
+    <option name="totallyTimeSpent" value="48157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="280" y="23" width="1400" height="983" extended-state="0" />
@@ -762,13 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1029,6 +1013,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
           <folding />
         </state>
       </provider>
