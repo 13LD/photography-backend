@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :api_user, class: 'Api::User' do
+    
+  end
   factory :post do
     title "title"
     description "description"

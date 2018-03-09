@@ -2,16 +2,6 @@ env:
   global:
     - CC_TEST_REPORTER_ID=19ede9da3de7582a10ae21503862b544ee508ecbadf00c421f96e35c78f2cbef
 
-deploy:
-  provider: heroku
-  api_key:
-    secure: "9bf5d451-324c-47d0-a09c-d6eb8b568937"
-  app: photography-back
-  run:
-    - "rake db:migrate"
-    - restart
-    - "rake cleanup"
-
 language: ruby
 rvm:
   - 2.4.1
