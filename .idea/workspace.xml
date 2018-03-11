@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a99e6a0-c4f9-4d68-a427-0214a768864f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/controllers/api/concerns/post_swaggers.rb" />
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change beforePath="$PROJECT_DIR$/.idea/photography_backend.iml" afterPath="$PROJECT_DIR$/.idea/photography_backend.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/concerns/post_swaggers.rb" afterPath="$PROJECT_DIR$/app/controllers/api/concerns/post_swaggers.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,8 +54,8 @@
       <file leaf-file-name="post_swaggers.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/concerns/post_swaggers.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+            <state relative-caret-position="447">
+              <caret line="75" column="18" lean-forward="false" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -202,7 +197,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="597" />
+    <option name="x" value="317" />
     <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="983" />
@@ -624,7 +619,7 @@
       <workItem from="1520554190151" duration="580000" />
       <workItem from="1520617111788" duration="11595000" />
       <workItem from="1520715691936" duration="558000" />
-      <workItem from="1520804828085" duration="286000" />
+      <workItem from="1520804828085" duration="1285000" />
     </task>
     <task id="LOCAL-00001" summary="travis.yml">
       <created>1520359184301</created>
@@ -640,14 +635,21 @@
       <option name="project" value="LOCAL" />
       <updated>1520362341391</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="swagger">
+      <created>1520805135895</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1520805135895</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51251000" />
+    <option name="totallyTimeSpent" value="52250000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="597" y="23" width="1400" height="983" extended-state="0" />
+    <frame x="317" y="23" width="1400" height="983" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -680,7 +682,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="travis.yml" />
     <MESSAGE value="updated README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated README.md" />
+    <MESSAGE value="swagger" />
+    <option name="LAST_COMMIT_MESSAGE" value="swagger" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -982,8 +985,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/concerns/post_swaggers.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="447">
+          <caret line="75" column="18" lean-forward="false" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
           <folding />
         </state>
       </provider>

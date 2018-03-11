@@ -6,30 +6,21 @@ module Swaggers
       swagger_path 'api/posts' do
         operation :get do
           key :description, 'List of posts'
-          key :operationId, 'Academic levels'
+          key :operationId, 'Posts'
           key :produces, [
               'application/json'
           ]
           key :tags, [
-              'Academic level'
+              'Post'
           ]
-          parameter do
-            key :name, :school_information_id
-            key :in, :query
-            key :description, 'ID of School Information to fetch its academic levels'
-            key :required, false
-            key :type, :integer
-            key :format, :int64
-          end
+
           security do
-            key 'access-token', []
-            key :client, []
-            key :uid, []
+            key 'Authorization', []
           end
           response 200 do
-            key :description, 'Academic levels fetched successfully'
+            key :description, 'Posts fetched successfully'
             schema do
-              key :'$ref', :AcademicLevelInput
+              key :'$ref', :PostInput
             end
           end
           response 403 do
@@ -40,50 +31,33 @@ module Swaggers
           end
         end
         operation :post do
-          key :description, 'Creates a new Academic Level'
-          key :operationId, 'Add Academic level'
+          key :description, 'Creates a new Post'
+          key :operationId, 'Add Post'
           key :produces, [
               'application/json'
           ]
           key :tags, [
-              'Academic level'
+              'Post'
           ]
           parameter do
-            key :name, 'academic_level[school_information_id]'
+            key :name, 'post[title]'
             key :in, :query
-            key :description, 'School Information id'
+            key :description, 'Title'
             key :required, true
             key :type, :string
-            key :'$ref', :AcademicLevelInput
+            key :'$ref', :PostInput
           end
           parameter do
-            key :name, 'academic_level[name]'
+            key :name, 'post[description]'
             key :in, :query
             key :description, 'Academic level Name'
             key :required, false
             key :type, :string
-            key :'$ref', :AcademicLevelInput
+            key :'$ref', :PostInput
           end
-          parameter do
-            key :name, 'academic_level[incorporation_number]'
-            key :in, :query
-            key :description, 'Academic level Incorporation_number'
-            key :required, false
-            key :type, :string
-            key :'$ref', :AcademicLevelInput
-          end
-          parameter do
-            key :name, 'academic_level[Key]'
-            key :in, :query
-            key :description, 'Academic level Key'
-            key :required, false
-            key :type, :string
-            key :'$ref', :AcademicLevelInput
-          end
+
           security do
-            key 'access-token', []
-            key :client, []
-            key :uid, []
+            key 'Authorization', []
           end
           response 200 do
             key :description, 'Academic level created successfully'
