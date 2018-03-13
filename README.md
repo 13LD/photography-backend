@@ -3,6 +3,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/13LD/photography-backend/badge.svg?branch=master)](https://coveralls.io/github/13LD/photography-backend?branch=master)
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/13LD/photography-backend)
 
+##### TODO
+- [ ] fix api concerns
+- [ ] swagger concerns
+- [ ] user concerns
 ## Benefits of token-based authentication
 #### There are several benefits to using such approach:
 
