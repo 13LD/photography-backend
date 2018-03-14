@@ -1,4 +1,4 @@
-module Swaggers
+module Api::Concerns::Swaggers
   module PostSwaggers
     extend ActiveSupport::Concern
     include Swagger::Blocks

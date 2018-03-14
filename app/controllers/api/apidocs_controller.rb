@@ -25,6 +25,14 @@ class Api::ApidocsController < Api::BaseController
         key :url, 'https://swagger.io'
       end
     end
+    tag do
+      key :name, 'User'
+      key :description, 'Users operations'
+      externalDocs do
+        key :description, 'Find more info here'
+        key :url, 'https://swagger.io'
+      end
+    end
     key :consumes, ['application/json']
     key :produces, ['application/json']
     security_definition 'Authorization' do
@@ -39,6 +47,8 @@ class Api::ApidocsController < Api::BaseController
   SWAGGERED_CLASSES = [
       Api::PostsController,
       Post,
+      Api::UsersController,
+      User,
       self,
   ].freeze
 

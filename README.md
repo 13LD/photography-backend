@@ -4,9 +4,9 @@
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/13LD/photography-backend)
 
 ##### TODO
-- [ ] fix api concerns
-- [ ] swagger concerns
-- [ ] user concerns
+- [x] fix api concerns
+- [x] swagger concerns
+- [x] user concerns
 ## Benefits of token-based authentication
 #### There are several benefits to using such approach:
 
