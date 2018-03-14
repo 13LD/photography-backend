@@ -1,6 +1,7 @@
 class Api::PostsController < Api::BaseController
   before_action :set_post, only: [:show, :update, :destroy]
   include Concerns::Swaggers::PostSwaggers
+
   # GET /posts
   def index
     @posts = Post.all
