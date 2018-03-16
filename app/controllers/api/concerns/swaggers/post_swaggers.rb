@@ -41,7 +41,7 @@ module Api::Concerns::Swaggers
           ]
           parameter do
             key :name, 'post[title]'
-            key :in, :query
+            key :in, :formData
             key :description, 'Title'
             key :required, false
             key :type, :string
@@ -49,7 +49,7 @@ module Api::Concerns::Swaggers
           end
           parameter do
             key :name, 'post[description]'
-            key :in, :query
+            key :in, :formData
             key :description, 'Academic level Name'
             key :required, true
             key :type, :string
@@ -135,7 +135,7 @@ module Api::Concerns::Swaggers
           end
           parameter do
             key :name, 'post[title]'
-            key :in, :query
+            key :in, :formData
             key :description, 'Title'
             key :required, false
             key :type, :string
@@ -143,7 +143,7 @@ module Api::Concerns::Swaggers
           end
           parameter do
             key :name, 'post[description]'
-            key :in, :query
+            key :in, :formData
             key :description, 'Academic level Name'
             key :required, true
             key :type, :string
