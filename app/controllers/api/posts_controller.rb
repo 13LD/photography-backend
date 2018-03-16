@@ -19,6 +19,7 @@ class Api::PostsController < Api::BaseController
     @post = Post.new(post_params)
 
     if @post.save
+      @post.reload
       render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
@@ -47,6 +48,6 @@ class Api::PostsController < Api::BaseController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :image)
     end
 end

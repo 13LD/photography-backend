@@ -34,5 +34,14 @@ gem 'jwt'
 
 # A simple, standardized way to build and use Service Objects (aka Commands) in Ruby
 gem 'simple_command'
+
+# Docs for entities
+gem 'swagger-blocks'
+
+
+# Upload files from Ruby applications
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 ###
+ 
 ```

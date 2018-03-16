@@ -43,7 +43,7 @@ module Api::Concerns::Swaggers
             key :name, 'post[title]'
             key :in, :query
             key :description, 'Title'
-            key :required, true
+            key :required, false
             key :type, :string
             key :'$ref', :PostInput
           end
@@ -51,8 +51,16 @@ module Api::Concerns::Swaggers
             key :name, 'post[description]'
             key :in, :query
             key :description, 'Academic level Name'
-            key :required, false
+            key :required, true
             key :type, :string
+            key :'$ref', :PostInput
+          end
+          parameter do
+            key :name, 'post[image]'
+            key :in, :formData
+            key :description, 'Post Image'
+            key :required, false
+            key :type, :file
             key :'$ref', :PostInput
           end
 
@@ -129,7 +137,7 @@ module Api::Concerns::Swaggers
             key :name, 'post[title]'
             key :in, :query
             key :description, 'Title'
-            key :required, true
+            key :required, false
             key :type, :string
             key :'$ref', :PostInput
           end
@@ -137,10 +145,19 @@ module Api::Concerns::Swaggers
             key :name, 'post[description]'
             key :in, :query
             key :description, 'Academic level Name'
-            key :required, false
+            key :required, true
             key :type, :string
             key :'$ref', :PostInput
           end
+          parameter do
+            key :name, 'post[image]'
+            key :in, :formData
+            key :description, 'Post Image'
+            key :required, false
+            key :type, :file
+            key :'$ref', :PostInput
+          end
+
           security do
             key 'Authorization', []
           end

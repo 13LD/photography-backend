@@ -36,8 +36,14 @@ gem 'validates_email_format_of'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
+
+# Docs for entities
 gem 'swagger-blocks'
 
+
+# Upload files from Ruby applications
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 
 group :development, :test do
   gem "rspec-rails"
