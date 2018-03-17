@@ -183,7 +183,7 @@ module Api::Concerns::Swaggers
           response 200 do
             key :description, 'Comment updated successfully'
             schema do
-              key :'$ref', :CommentInput
+              key :'$ref', :Com
             end
           end
           response 403 do
@@ -200,15 +200,15 @@ module Api::Concerns::Swaggers
           end
         end
         operation :delete do
-          key :description, 'Delete Comment'
-          key :operationId, 'delete Comment'
+          key :description, 'Delete User'
+          key :operationId, 'delete User'
           key :tags, [
-              'Comment'
+              'User'
           ]
           parameter do
             key :name, :id
             key :in, :path
-            key :description, 'ID of Comment to delete'
+            key :description, 'ID of User to delete'
             key :required, true
             key :type, :integer
             key :format, :int64
@@ -217,9 +217,9 @@ module Api::Concerns::Swaggers
             key 'Authorization', []
           end
           response 200 do
-            key :description, 'Comment Deleted Successfully'
+            key :description, 'User Deleted Successfully'
             schema do
-              key :'$ref', :Comment
+              key :'$ref', :User
             end
           end
           response 403 do
