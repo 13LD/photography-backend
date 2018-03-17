@@ -3,6 +3,7 @@ module Api::Concerns::Swaggers
     extend ActiveSupport::Concern
     include Swagger::Blocks
     included do
+
       swagger_path '/api/posts' do
         operation :get do
           key :description, 'List of posts'
@@ -84,6 +85,42 @@ module Api::Concerns::Swaggers
             schema do
               key :'$ref', :RejectRequest
             end
+          end
+        end
+      end
+      swagger_path '/api/download_image' do
+        operation :post do
+          key :description, 'Download  picture'
+          key :operationId, 'Download  picture'
+          key :produces, [
+              'application/json'
+          ]
+          key :tags, [
+              'Post'
+          ]
+          parameter do
+            key :name, :id
+            key :in, :query
+            key :description, 'ID of Post to fetch its Image'
+            key :required, true
+            key :type, :integer
+            key :format, :int64
+          end
+          parameter do
+            key :name, :image
+            key :in, :query
+            key :description, 'Image to be downloaded'
+            key :required, true
+            key :type, :string
+            key :'$ref', :PostInput
+          end
+          security do
+            key 'Authorization', []
+          end
+
+          response 200 do
+            key :description, 'Post Image successfully Downloaded.'
+            key :'$ref', :PostInput
           end
         end
       end
@@ -210,6 +247,9 @@ module Api::Concerns::Swaggers
             end
           end
         end
+
+
+
       end
     end
   end

@@ -14,6 +14,17 @@ class Api::PostsController < Api::BaseController
     render json: @post
   end
 
+  def download_image
+    if params[:image] == 'image'
+      @post = Post.find(params[:id])
+      response.headers['Content-Length'] = @post.send(params[:image].to_sym).size.to_s
+      send_file("#{@post.send(params[:image].to_sym).path}")
+    else
+      render :json => { :errors => "Image not found" }
+    end
+  end
+
+
   # POST /posts
   def create
     @post = Post.new(post_params)

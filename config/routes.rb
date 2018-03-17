@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :comments
     resources :apidocs, only: [:index]
-
+    post 'download_image', to: 'posts#download_image'
     post 'authenticate', to: 'authentication#authenticate'
   end
 
