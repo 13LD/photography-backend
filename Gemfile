@@ -55,6 +55,11 @@ group :development, :test, :production do
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+
+end
+
+group :test do
+  gem "database_cleaner"
 end
 
 group :development do
