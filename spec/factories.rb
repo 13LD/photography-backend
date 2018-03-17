@@ -5,6 +5,10 @@ FactoryBot.define do
   factory :post do
     title "title"
     description "description"
+    image do
+      # you'll get an error if the file doesn't exist
+      File.open(File.join(Rails.root, 'spec', 'support', 'test.png'))
+    end
   end
 
   factory :user do
