@@ -33,6 +33,14 @@ class Api::ApidocsController < Api::BaseController
         key :url, 'https://swagger.io'
       end
     end
+    tag do
+      key :name, 'Comment'
+      key :description, 'Comment operations'
+      externalDocs do
+        key :description, 'Find more info here'
+        key :url, 'https://swagger.io'
+      end
+    end
     key :consumes, ['application/json']
     key :produces, ['application/json']
     security_definition 'Authorization' do
@@ -49,6 +57,8 @@ class Api::ApidocsController < Api::BaseController
       Post,
       Api::UsersController,
       User,
+      Api::CommentsController,
+      Comment,
       self,
   ].freeze
 

@@ -1,6 +1,6 @@
 class Api::CommentsController < Api::BaseController
   before_action :set_comment, only: [:show, :update, :destroy]
-
+  include Api::Concerns::Swaggers::CommentSwaggers
   # GET /comments
   def index
     @comments = Comment.all

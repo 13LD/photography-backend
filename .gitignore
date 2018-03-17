@@ -12,8 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+/public/uploads/*
 /.idea/*
-/coverage
+/coverage/*
 
 .byebug_history
