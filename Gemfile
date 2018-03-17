@@ -45,7 +45,7 @@ gem 'swagger-blocks'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
-group :development, :test do
+group :development, :test, :production do
   gem "rspec-rails"
   gem 'factory_bot_rails'
   gem 'factory_bot'
