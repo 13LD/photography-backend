@@ -17,12 +17,6 @@ RSpec.describe Post, type: :model do
       expect(Post.count).to eq(post_count)
     end
 
-    it "should not be created if description.length = 0" do
-      post_count = Post.count
-      expect {
-        create(:post, description: " ")
-      }.to raise_error(ActiveRecord::RecordInvalid)
-      expect(Post.count).to eq(post_count)
-    end
+
   end
 end

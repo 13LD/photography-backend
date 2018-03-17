@@ -1,7 +1,5 @@
 FactoryBot.define do
-  factory :api_user, class: 'Api::User' do
-    
-  end
+
   factory :post do
     title "title"
     description "description"
@@ -16,5 +14,13 @@ FactoryBot.define do
     password "hunter96"
     password_confirmation "hunter96"
     sequence(:name){|n| "user_name#{n}" }
+  end
+
+  factory :comment do
+
+    title "title"
+    content "content"
+    user
+    post
   end
 end

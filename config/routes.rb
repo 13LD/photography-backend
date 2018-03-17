@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   namespace :api do
     resources :users
     resources :posts
+    resources :comments
     resources :apidocs, only: [:index]
 
     post 'authenticate', to: 'authentication#authenticate'
