@@ -23,7 +23,6 @@ module PhotographyBackend
     config.autoload_paths << Rails.root.join('lib')
     config.eager_load = true
 
-
     config.middleware.use Rack::Cors do
       allow do
         origins '*'

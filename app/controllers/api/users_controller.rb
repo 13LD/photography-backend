@@ -3,7 +3,6 @@ class Api::UsersController < Api::BaseController
   include Api::Concerns::Swaggers::UserSwaggers
   skip_before_action :authenticate_request
 
-  skip_before_action :verify_authenticity_token
 
   # GET /users
   def index
@@ -18,11 +17,13 @@ class Api::UsersController < Api::BaseController
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    @user = User.new(
+      email: params[:email],
+      name: params[:name],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation]
+    )
     if @user.save
-      respond_to do |format|
-        format.json
-      end
       render json: @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
