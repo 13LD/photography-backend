@@ -26,7 +26,7 @@ module PhotographyBackend
 
     config.middleware.use Rack::Cors do
       allow do
-        origins 'localhost:4200', 'https://photography-front.herokuapp.com'
+        origins '*'
         resource '*',
                  :headers => :any,
                  :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],

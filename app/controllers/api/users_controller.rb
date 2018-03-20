@@ -3,6 +3,7 @@ class Api::UsersController < Api::BaseController
   include Api::Concerns::Swaggers::UserSwaggers
   skip_before_action :authenticate_request
 
+  skip_before_action :verify_authenticity_token
 
   # GET /users
   def index
