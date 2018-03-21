@@ -35,7 +35,8 @@ RSpec.describe Api::CommentsController, type: :controller do
   let(:invalid_attributes) {
     attributes_for(:comment, content: " ")
   }
-  def authenticated_header(user)
+  def authenticated_header
+    user = create(:user)
     token = AuthenticateUser.call(user.email, user.password)
     { "Authorization" => token.result }
   end
@@ -46,8 +47,7 @@ RSpec.describe Api::CommentsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      user = create(:user)
-      @request.headers.merge! (authenticated_header(user))
+      @request.headers.merge! authenticated_header
       comment = create(:comment)
       get :index, params: {}, session: valid_session
       expect(response).to be_success
@@ -56,8 +56,7 @@ RSpec.describe Api::CommentsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      user = create(:user)
-      @request.headers.merge! (authenticated_header(user))
+      @request.headers.merge! authenticated_header
       comment = create(:comment)
       get :show, params: {id: comment.to_param}, session: valid_session
       expect(response).to be_success
@@ -69,7 +68,7 @@ RSpec.describe Api::CommentsController, type: :controller do
       it "creates a new Comment" do
         expect {
           user = create(:user)
-          @request.headers.merge! (authenticated_header(user))
+          @request.headers.merge! authenticated_header
           @post = create(:post)
           post :create, params: {comment: attributes_for(:comment, user_id: user.id, post_id: @post.id)}, session: valid_session
         }.to change(Comment, :count).by(1)
@@ -79,8 +78,7 @@ RSpec.describe Api::CommentsController, type: :controller do
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new comment" do
-        user = create(:user)
-        @request.headers.merge! (authenticated_header(user))
+        @request.headers.merge! authenticated_header
         post :create, params: {comment: attributes_for(:comment, content: " ")}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
@@ -95,8 +93,7 @@ RSpec.describe Api::CommentsController, type: :controller do
       }
 
       it "updates the requested comment" do
-        user = create(:user)
-        @request.headers.merge! (authenticated_header(user))
+        @request.headers.merge! authenticated_header
         comment = create(:comment)
         put :update, params: {id: comment.to_param, comment: new_attributes}, session: valid_session
         comment.reload
@@ -104,8 +101,7 @@ RSpec.describe Api::CommentsController, type: :controller do
       end
 
       it "renders a JSON response with the comment" do
-        user = create(:user)
-        @request.headers.merge! (authenticated_header(user))
+        @request.headers.merge! authenticated_header
         comment = create(:comment)
 
         put :update, params: {id: comment.to_param, comment: valid_attributes}, session: valid_session
@@ -116,8 +112,7 @@ RSpec.describe Api::CommentsController, type: :controller do
 
     context "with invalid params" do
       it "renders a JSON response with errors for the comment" do
-        user = create(:user)
-        @request.headers.merge! (authenticated_header(user))
+        @request.headers.merge! authenticated_header
         comment = create(:comment)
 
         put :update, params: {id: comment.to_param, comment: invalid_attributes}, session: valid_session
@@ -129,8 +124,7 @@ RSpec.describe Api::CommentsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested comment" do
-      user = create(:user)
-      @request.headers.merge! (authenticated_header(user))
+      @request.headers.merge! authenticated_header
       comment = create(:comment)
       expect {
         delete :destroy, params: {id: comment.to_param}, session: valid_session

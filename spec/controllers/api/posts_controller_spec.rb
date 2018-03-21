@@ -40,15 +40,15 @@ RSpec.describe Api::PostsController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # PostsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
-  def authenticated_header(user)
+  def authenticated_header
+    user = create(:user)
     token = AuthenticateUser.call(user.email, user.password)
     { "Authorization" => token.result }
   end
 
   describe "GET #index" do
     it "returns a success response" do
-      user = create(:user)
-      @request.headers.merge! (authenticated_header(user))
+      @request.headers.merge! authenticated_header
       post = create(:post)
       get :index, params: {}, session: valid_session
       expect(response).to be_success
@@ -57,8 +57,7 @@ RSpec.describe Api::PostsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      user = create(:user)
-      @request.headers.merge! (authenticated_header(user))
+      @request.headers.merge! authenticated_header
       post = create(:post)
       get :show, params: {id: post.to_param}, session: valid_session
       expect(response).to be_success
@@ -69,8 +68,7 @@ RSpec.describe Api::PostsController, type: :controller do
     context "with valid params" do
       it "creates a new Post" do
         expect {
-          user = create(:user)
-          @request.headers.merge! (authenticated_header(user))
+          @request.headers.merge! authenticated_header
           post :create, params: {post: valid_attributes}, session: valid_session
         }.to change(Post, :count).by(1)
       end
@@ -79,8 +77,7 @@ RSpec.describe Api::PostsController, type: :controller do
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new post" do
-        user = create(:user)
-        @request.headers.merge! (authenticated_header(user))
+        @request.headers.merge! authenticated_header
         post :create, params: {post: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
@@ -95,8 +92,7 @@ RSpec.describe Api::PostsController, type: :controller do
       }
 
       it "updates the requested post" do
-        user = create(:user)
-        @request.headers.merge! (authenticated_header(user))
+        @request.headers.merge! authenticated_header
         post = Post.create! valid_attributes
         put :update, params: {id: post.to_param, post: new_attributes}, session: valid_session
         post.reload
@@ -104,8 +100,7 @@ RSpec.describe Api::PostsController, type: :controller do
       end
 
       it "renders a JSON response with the post" do
-        user = create(:user)
-        @request.headers.merge! (authenticated_header(user))
+        @request.headers.merge! authenticated_header
         post = Post.create! valid_attributes
 
         put :update, params: {id: post.to_param, post: valid_attributes}, session: valid_session
@@ -116,8 +111,7 @@ RSpec.describe Api::PostsController, type: :controller do
 
     context "with invalid params" do
       it "renders a JSON response with errors for the post" do
-        user = create(:user)
-        @request.headers.merge! (authenticated_header(user))
+        @request.headers.merge! authenticated_header
         post = Post.create! valid_attributes
 
         put :update, params: {id: post.to_param, post: invalid_attributes}, session: valid_session
@@ -129,8 +123,7 @@ RSpec.describe Api::PostsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested post" do
-      user = create(:user)
-      @request.headers.merge! (authenticated_header(user))
+      @request.headers.merge! authenticated_header
       post = Post.create! valid_attributes
       expect {
         delete :destroy, params: {id: post.to_param}, session: valid_session
