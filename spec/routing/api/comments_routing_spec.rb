@@ -3,31 +3,17 @@ require "rails_helper"
 RSpec.describe Api::CommentsController, type: :routing do
   describe "routing" do
 
-    it "routes to #index" do
-      expect(:get => "/api/comments").to route_to("api/comments#index")
-    end
+    it { should route(:get, '/api/comments').to(action: :index) }
 
+    it { should route(:get, '/api/comments/1').to(action: :show, id: 1) }
 
-    it "routes to #show" do
-      expect(:get => "/api/comments/1").to route_to("api/comments#show", :id => "1")
-    end
+    it { should route(:post, '/api/comments').to(action: :create) }
 
+    it { should route(:put, '/api/comments/1').to(action: :update, id: 1) }
 
-    it "routes to #create" do
-      expect(:post => "/api/comments").to route_to("api/comments#create")
-    end
+    it { should route(:patch, '/api/comments/1').to(action: :update, id: 1) }
 
-    it "routes to #update via PUT" do
-      expect(:put => "/api/comments/1").to route_to("api/comments#update", :id => "1")
-    end
-
-    it "routes to #update via PATCH" do
-      expect(:patch => "/api/comments/1").to route_to("api/comments#update", :id => "1")
-    end
-
-    it "routes to #destroy" do
-      expect(:delete => "/api/comments/1").to route_to("api/comments#destroy", :id => "1")
-    end
+    it { should route(:delete, '/api/comments/1').to(action: :destroy, id: 1) }
 
   end
 end

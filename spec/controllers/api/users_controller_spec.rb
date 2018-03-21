@@ -60,12 +60,14 @@ RSpec.describe Api::UsersController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
+
       it "creates a new User" do
         expect {
           post :create, params: {user: attributes_for(:user)}, session: valid_session
         }.to change(User, :count).by(1)
       end
     end
+
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new api_user" do
