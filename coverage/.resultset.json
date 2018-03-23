@@ -1087,6 +1087,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/app/controllers/api/comments_controller.rb": [
@@ -1392,6 +1393,16 @@
         1,
         null,
         1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
         0,
         0,
         0,
@@ -1864,10 +1875,13 @@
         1,
         null,
         1,
-        1,
+        2,
+        null,
+        2,
         null
       ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/app/models/auth_token.rb": [
+        1,
         1,
         1,
         null
@@ -2090,6 +2104,6 @@
         null
       ]
     },
-    "timestamp": 1521837894
+    "timestamp": 1521840279
   }
 }
