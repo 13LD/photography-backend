@@ -262,6 +262,9 @@
       ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/spec/factories.rb": [
         1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -290,7 +293,6 @@
       ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/config/routes.rb": [
         1,
-        null,
         1,
         1,
         1,
@@ -298,10 +300,10 @@
         1,
         1,
         1,
-        null,
-        null,
         1,
         null,
+        null,
+        1,
         null
       ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/spec/support/factory_bot.rb": [
@@ -1084,6 +1086,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/app/controllers/api/comments_controller.rb": [
@@ -1857,6 +1860,18 @@
         null,
         null
       ],
+      "/Users/dmytrolysohor/RubymineProjects/photography_backend/spec/models/auth_token_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/dmytrolysohor/RubymineProjects/photography_backend/app/models/auth_token.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/spec/models/comment_spec.rb": [
         1,
         null,
@@ -1898,6 +1913,18 @@
         null,
         null
       ],
+      "/Users/dmytrolysohor/RubymineProjects/photography_backend/spec/requests/api/comments_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/spec/requests/api/posts_spec.rb": [
         1,
         null,
@@ -1911,18 +1938,6 @@
         null
       ],
       "/Users/dmytrolysohor/RubymineProjects/photography_backend/spec/requests/api/users_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/dmytrolysohor/RubymineProjects/photography_backend/spec/requests/comments_spec.rb": [
         1,
         null,
         1,
@@ -2075,6 +2090,6 @@
         null
       ]
     },
-    "timestamp": 1521675946
+    "timestamp": 1521837894
   }
 }

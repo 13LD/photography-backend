@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :auth_token do
+    token "MyString"
+  end
 
   factory :post do
     title "title"
