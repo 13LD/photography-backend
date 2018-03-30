@@ -18,11 +18,6 @@ class Api::UsersController < Api::BaseController
   # POST /users
   def create
     @user = User.new(user_params)
-    #   email: params[:email],
-    #   name: params[:name],
-    #   password: params[:password],
-    #   password_confirmation: params[:password_confirmation]
-    # )
     if @user.save
       render json: @user, status: :created
     else
