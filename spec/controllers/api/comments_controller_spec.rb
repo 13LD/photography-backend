@@ -36,9 +36,19 @@ RSpec.describe Api::CommentsController, type: :controller do
     attributes_for(:comment, content: " ")
   }
   def authenticated_header
-    user = create(:user)
-    token = AuthenticateUser.call(user.email, user.password)
-    { "Authorization" => token.result }
+    @user = create(:user)
+    @user.save
+    command = AuthenticateUser.call(@user.email, @user.password)
+    @auth_token = AuthToken.new(
+        token: command.result,
+        user_id: @user.id
+    )
+
+    @auth_token.save
+    @user.auth_token = @auth_token
+    @user.save
+
+    { "Authorization" => command.result }
   end
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in

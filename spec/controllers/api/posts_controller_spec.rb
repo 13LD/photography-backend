@@ -41,9 +41,19 @@ RSpec.describe Api::PostsController, type: :controller do
   # PostsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
   def authenticated_header
-    user = create(:user)
-    token = AuthenticateUser.call(user.email, user.password)
-    { "Authorization" => token.result }
+    @user = create(:user)
+    @user.save
+    command = AuthenticateUser.call(@user.email, @user.password)
+    @auth_token = AuthToken.new(
+        token: command.result,
+        user_id: @user.id
+    )
+
+    @auth_token.save
+    @user.auth_token = @auth_token
+    @user.save
+
+    { "Authorization" => command.result }
   end
 
   describe "GET #index" do

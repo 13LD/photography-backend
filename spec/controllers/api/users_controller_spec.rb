@@ -36,8 +36,17 @@ RSpec.describe Api::UsersController, type: :controller do
 
 
   def authenticated_header(user)
-    token = AuthenticateUser.call(user.email, user.password)
-    { "Authorization" => token.result }
+    command = AuthenticateUser.call(user.email, user.password)
+    @auth_token = AuthToken.new(
+        token: command.result,
+        user_id: user.id
+    )
+
+    @auth_token.save
+    user.auth_token = @auth_token
+    user.save
+
+    { "Authorization" => command.result }
   end
 
   describe "GET #index" do
