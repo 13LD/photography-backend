@@ -27,7 +27,7 @@ class Api::ApidocsController < Api::BaseController
     end
     tag do
       key :name, 'Auth'
-      key :description, 'Login'
+      key :description, 'Login and Logout'
       externalDocs do
         key :description, 'Find more info here'
         key :url, 'https://swagger.io'

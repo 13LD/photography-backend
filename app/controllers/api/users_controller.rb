@@ -1,7 +1,7 @@
 class Api::UsersController < Api::BaseController
   before_action :set_user, only: [:show, :update, :destroy]
   include Api::Concerns::Swaggers::UserSwaggers
-  skip_before_action :authenticate_request
+
 
 
   # GET /users

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :apidocs, only: [:index]
     post 'download_image', to: 'posts#download_image'
     post 'authenticate', to: 'authentication#authenticate'
+    post 'logout', to: 'authentication#logout'
   end
 
   get '/api' => redirect('/swagger/dist/index.html?url=/api/apidocs.json')

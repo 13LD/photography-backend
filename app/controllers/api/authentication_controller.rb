@@ -10,7 +10,6 @@ class Api::AuthenticationController < Api::BaseController
         token: command.result,
         user_id: @user.id
       )
-      ##TODO: Fix this part
 
       @auth_token.save
       @user.auth_token = @auth_token
@@ -19,5 +18,11 @@ class Api::AuthenticationController < Api::BaseController
     else
       render json: { error: command.errors }, status: :unauthorized
     end
+  end
+
+  def logout
+    @user = User.find_by_email(params[:email])
+    @user.auth_token.destroy
+    head :no_content
   end
 end
