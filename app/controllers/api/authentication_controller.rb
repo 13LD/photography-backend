@@ -5,7 +5,7 @@ class Api::AuthenticationController < Api::BaseController
   def authenticate
     @user = User.find_by_email(params[:email])
     command = AuthenticateUser.call(params[:email], params[:password])
-    if command.success?
+    if command.result.present?
       @auth_token = AuthToken.new(
         token: command.result,
         user_id: @user.id
@@ -22,7 +22,11 @@ class Api::AuthenticationController < Api::BaseController
 
   def logout
     @user = User.find_by_email(params[:email])
-    @user.auth_token.destroy
-    head :no_content
+    if @user.auth_token
+      @user.auth_token.destroy
+      head :no_content
+    else
+      head :not_found
+    end
   end
 end
