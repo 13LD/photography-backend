@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :tag do
+    tag_name "MyString"
+  end
   factory :auth_token do
     token "MyString"
   end

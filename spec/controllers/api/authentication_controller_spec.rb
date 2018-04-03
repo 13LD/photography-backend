@@ -31,13 +31,13 @@ RSpec.describe Api::AuthenticationController, type: :controller do
       @user.auth_token = @auth_token
       @user.save
 
-      post :logout, params: {email: @user.email}, session: valid_session
+      delete :logout, params: {email: @user.email}, session: valid_session
       expect(response).to have_http_status(:no_content)
     end
 
     it "returns a error response" do
       @user = create(:user)
-      post :logout, params: {email: @user.email}, session: valid_session
+      delete :logout, params: {email: @user.email}, session: valid_session
       expect(response).to have_http_status(:not_found)
     end
   end
