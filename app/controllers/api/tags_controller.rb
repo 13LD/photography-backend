@@ -1,6 +1,6 @@
 class Api::TagsController < Api::BaseController
   before_action :set_tag, only: [:show, :update, :destroy]
-
+  include Api::Concerns::Swaggers::TagSwaggers
   # GET /tags
   def index
     @tags = Tag.all
