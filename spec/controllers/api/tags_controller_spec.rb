@@ -23,17 +23,17 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe TagsController, type: :controller do
+RSpec.describe Api::TagsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Tag. As you add validations to Tag, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:tag)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:tag, tag_name: "")
   }
 
   # This should return the minimal set of values that should be in the session
@@ -41,9 +41,26 @@ RSpec.describe TagsController, type: :controller do
   # TagsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  def authenticated_header
+    @user = create(:user)
+    @user.save
+    command = AuthenticateUser.call(@user.email, @user.password)
+    @auth_token = AuthToken.new(
+        token: command.result,
+        user_id: @user.id
+    )
+
+    @auth_token.save
+    @user.auth_token = @auth_token
+    @user.save
+
+    { "Authorization" => command.result }
+  end
+
   describe "GET #index" do
     it "returns a success response" do
-      tag = Tag.create! valid_attributes
+      @request.headers.merge! authenticated_header
+      tag = create(:tag)
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,7 +68,8 @@ RSpec.describe TagsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      tag = Tag.create! valid_attributes
+      @request.headers.merge! authenticated_header
+      tag = create(:tag)
       get :show, params: {id: tag.to_param}, session: valid_session
       expect(response).to be_success
     end
@@ -60,23 +78,23 @@ RSpec.describe TagsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Tag" do
+        @request.headers.merge! authenticated_header
         expect {
           post :create, params: {tag: valid_attributes}, session: valid_session
         }.to change(Tag, :count).by(1)
       end
 
       it "renders a JSON response with the new tag" do
-
+        @request.headers.merge! authenticated_header
         post :create, params: {tag: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json')
-        expect(response.location).to eq(tag_url(Tag.last))
       end
     end
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new tag" do
-
+        @request.headers.merge! authenticated_header
         post :create, params: {tag: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
@@ -87,17 +105,19 @@ RSpec.describe TagsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:tag, tag_name: "name")
       }
 
       it "updates the requested tag" do
+        @request.headers.merge! authenticated_header
         tag = Tag.create! valid_attributes
         put :update, params: {id: tag.to_param, tag: new_attributes}, session: valid_session
         tag.reload
-        skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the tag" do
+        @request.headers.merge! authenticated_header
+
         tag = Tag.create! valid_attributes
 
         put :update, params: {id: tag.to_param, tag: valid_attributes}, session: valid_session
@@ -108,6 +128,8 @@ RSpec.describe TagsController, type: :controller do
 
     context "with invalid params" do
       it "renders a JSON response with errors for the tag" do
+        @request.headers.merge! authenticated_header
+
         tag = Tag.create! valid_attributes
 
         put :update, params: {id: tag.to_param, tag: invalid_attributes}, session: valid_session
@@ -119,6 +141,8 @@ RSpec.describe TagsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested tag" do
+      @request.headers.merge! authenticated_header
+
       tag = Tag.create! valid_attributes
       expect {
         delete :destroy, params: {id: tag.to_param}, session: valid_session

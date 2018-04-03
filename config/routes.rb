@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :tags
+
   namespace :api do
     resources :auth_tokens
     resources :users
     resources :posts
     resources :comments
+    resources :tags
     resources :apidocs, only: [:index]
     post 'download_image', to: 'posts#download_image'
     post 'authenticate', to: 'authentication#authenticate'
