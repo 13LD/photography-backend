@@ -7,7 +7,8 @@ class Api::BaseController < ActionController::API
   def authenticate_request
     @current_user = AuthorizeApiRequest.call(request.headers).result
     if request.headers['Authorization'].present?
-      render json: { error: 'Not Authorized' }, status: 401 unless @current_user.auth_token.token == request.headers['Authorization'].split(' ').last
+      render json: { error: 'Not Authorized' }, status: 401 unless @current_user &&
+          @current_user.auth_token.token == request.headers['Authorization'].split(' ').last
     else
       render json: { error: 'Not placed Authorization header' }, status: 401
     end

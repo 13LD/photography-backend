@@ -1,12 +1,7 @@
 FactoryBot.define do
-  
-  factory :photo do
-    file "MyString"
-    tag
-  end
-  factory :tag do
-    tag_name "MyString"
-  end
+
+
+
   factory :auth_token do
     token "MyString"
   end
@@ -33,5 +28,14 @@ FactoryBot.define do
     content "content"
     user
     post
+  end
+
+  factory :tag do
+    tag_name "MyString"
+  end
+
+  factory :photo do
+    file "MyString"
+    tag
   end
 end
