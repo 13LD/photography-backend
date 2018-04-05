@@ -1,5 +1,6 @@
 class Api::PhotosController < Api::BaseController
   before_action :set_photo, only: [:show, :update, :destroy]
+  include Api::Concerns::Swaggers::PhotoSwaggers
 
   # GET /photos
   def index
