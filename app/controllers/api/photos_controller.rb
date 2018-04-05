@@ -18,6 +18,7 @@ class Api::PhotosController < Api::BaseController
     @photo = Photo.new(photo_params)
 
     if @photo.save
+      @photo.reload
       render json: @photo, status: :created
     else
       render json: @photo.errors, status: :unprocessable_entity

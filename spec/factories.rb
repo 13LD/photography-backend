@@ -35,7 +35,10 @@ FactoryBot.define do
   end
 
   factory :photo do
-    file "MyString"
+    file do
+      # you'll get an error if the file doesn't exist
+      File.open(File.join(Rails.root, 'spec', 'support', 'test.png'))
+    end
     tag
   end
 end
