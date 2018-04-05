@@ -1,4 +1,9 @@
 FactoryBot.define do
+  
+  factory :photo do
+    file "MyString"
+    tag
+  end
   factory :tag do
     tag_name "MyString"
   end

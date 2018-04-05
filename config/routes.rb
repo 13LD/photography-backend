@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+
   namespace :api do
     resources :auth_tokens
     resources :users
     resources :posts
+    resources :photos
     resources :comments
     resources :tags
     resources :apidocs, only: [:index]
