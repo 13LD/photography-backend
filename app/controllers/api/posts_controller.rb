@@ -6,12 +6,12 @@ class Api::PostsController < Api::BaseController
   def index
     @posts = Post.all
 
-    render json: @posts
+    render json: @posts, :include => {:comments => {:only => [:title, :content, :created_at]}}
   end
 
   # GET /posts/1
   def show
-    render json: @post
+    render json: @post, :include => {:comments => {:only => [:title, :content, :created_at]}}
   end
 
   def download_image
