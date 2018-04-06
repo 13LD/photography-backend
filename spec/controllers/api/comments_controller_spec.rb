@@ -93,6 +93,13 @@ RSpec.describe Api::CommentsController, type: :controller do
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
+
+      it "renders a JSON response with errors for the new comment" do
+        @request.headers.merge! authenticated_header
+          post :create, params: {comment: attributes_for(:comment, post_id: nil, user_id: nil)}, session: valid_session
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response.content_type).to eq('application/json')
+      end
     end
   end
 

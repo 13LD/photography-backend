@@ -3,6 +3,6 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
   validates :description, presence: true
-
+  has_many :comments
 
 end

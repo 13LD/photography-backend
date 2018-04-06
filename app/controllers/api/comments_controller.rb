@@ -15,12 +15,17 @@ class Api::CommentsController < Api::BaseController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
-
-    if @comment.save
-      render json: @comment, status: :created
+    if Post.exists?(params[:comment][:post_id])
+      @post = Post.find(params[:comment][:post_id])
+      @comment = @post.comments.new(comment_params)
+      if @comment.save
+        current_user.comments << @comment
+        render json: @comment, status: :created
+      else
+        render json: @comment.errors, status: :unprocessable_entity
+      end
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render json: {:errors => "Post Id doesn't exists" }, status: :unprocessable_entity
     end
   end
 
