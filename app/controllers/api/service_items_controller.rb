@@ -1,5 +1,6 @@
 class Api::ServiceItemsController < Api::BaseController
   before_action :set_service_item, only: [:show, :update, :destroy]
+  include Api::Concerns::Swaggers::ServiceItemSwaggers
 
   # GET /service_items
   def index
