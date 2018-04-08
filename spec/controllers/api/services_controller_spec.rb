@@ -112,7 +112,6 @@ RSpec.describe Api::ServicesController, type: :controller do
         service = Service.create! valid_attributes
         put :update, params: {id: service.to_param, service: new_attributes}, session: valid_session
         service.reload
-        skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the service" do

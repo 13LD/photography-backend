@@ -29,11 +29,11 @@ RSpec.describe Api::ServiceItemsController, type: :controller do
   # ServiceItem. As you add validations to ServiceItem, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:service_item)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:service_item, description: " ")
   }
 
   # This should return the minimal set of values that should be in the session
@@ -41,9 +41,26 @@ RSpec.describe Api::ServiceItemsController, type: :controller do
   # ServiceItemsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  def authenticated_header
+    @user = create(:user)
+    @user.save
+    command = AuthenticateUser.call(@user.email, @user.password)
+    @auth_token = AuthToken.new(
+        token: command.result,
+        user_id: @user.id
+    )
+
+    @auth_token.save
+    @user.auth_token = @auth_token
+    @user.save
+
+    { "Authorization" => command.result }
+  end
+
   describe "GET #index" do
     it "returns a success response" do
-      service_item = ServiceItem.create! valid_attributes
+      @request.headers.merge! authenticated_header
+      service_item = create(:service_item)
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,7 +68,8 @@ RSpec.describe Api::ServiceItemsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      service_item = ServiceItem.create! valid_attributes
+      @request.headers.merge! authenticated_header
+      service_item = create(:service_item)
       get :show, params: {id: service_item.to_param}, session: valid_session
       expect(response).to be_success
     end
@@ -60,24 +78,18 @@ RSpec.describe Api::ServiceItemsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new ServiceItem" do
+        @request.headers.merge! authenticated_header
+        @service = create(:service)
         expect {
-          post :create, params: {service_item: valid_attributes}, session: valid_session
+          post :create, params: {service_item: attributes_for(:service_item, service_id: @service.id)}, session: valid_session
         }.to change(ServiceItem, :count).by(1)
-      end
-
-      it "renders a JSON response with the new service_item" do
-
-        post :create, params: {service_item: valid_attributes}, session: valid_session
-        expect(response).to have_http_status(:created)
-        expect(response.content_type).to eq('application/json')
-        expect(response.location).to eq(service_item_url(ServiceItem.last))
       end
     end
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new service_item" do
-
-        post :create, params: {service_item: invalid_attributes}, session: valid_session
+        @request.headers.merge! authenticated_header
+        post :create, params: {service_item: attributes_for(:service_item, description: " ")}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
       end
@@ -87,18 +99,19 @@ RSpec.describe Api::ServiceItemsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:service_item, description: "Desc")
       }
 
       it "updates the requested service_item" do
-        service_item = ServiceItem.create! valid_attributes
+        @request.headers.merge! authenticated_header
+        service_item = create(:service_item)
         put :update, params: {id: service_item.to_param, service_item: new_attributes}, session: valid_session
         service_item.reload
-        skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the service_item" do
-        service_item = ServiceItem.create! valid_attributes
+        @request.headers.merge! authenticated_header
+        service_item = create(:service_item)
 
         put :update, params: {id: service_item.to_param, service_item: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:ok)
@@ -107,8 +120,10 @@ RSpec.describe Api::ServiceItemsController, type: :controller do
     end
 
     context "with invalid params" do
+
       it "renders a JSON response with errors for the service_item" do
-        service_item = ServiceItem.create! valid_attributes
+        @request.headers.merge! authenticated_header
+        service_item = create(:service_item)
 
         put :update, params: {id: service_item.to_param, service_item: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
@@ -119,7 +134,8 @@ RSpec.describe Api::ServiceItemsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested service_item" do
-      service_item = ServiceItem.create! valid_attributes
+      @request.headers.merge! authenticated_header
+      service_item = create(:service_item)
       expect {
         delete :destroy, params: {id: service_item.to_param}, session: valid_session
       }.to change(ServiceItem, :count).by(-1)

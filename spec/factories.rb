@@ -1,14 +1,4 @@
 FactoryBot.define do
-  factory :service_item do
-    description "MyString"
-    service nil
-  end
-
-  factory :service do
-    package_name "MyString"
-  end
-
-
 
   factory :auth_token do
     token "MyString"
@@ -48,5 +38,14 @@ FactoryBot.define do
       File.open(File.join(Rails.root, 'spec', 'support', 'test.png'))
     end
     tag
+  end
+
+  factory :service do
+    package_name "MyString"
+  end
+
+  factory :service_item do
+    description "MyString"
+    service
   end
 end
