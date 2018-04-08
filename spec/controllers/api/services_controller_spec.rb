@@ -29,13 +29,28 @@ RSpec.describe Api::ServicesController, type: :controller do
   # Service. As you add validations to Service, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:service)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:service, package_name: " ")
   }
 
+  def authenticated_header
+    @user = create(:user)
+    @user.save
+    command = AuthenticateUser.call(@user.email, @user.password)
+    @auth_token = AuthToken.new(
+        token: command.result,
+        user_id: @user.id
+    )
+
+    @auth_token.save
+    @user.auth_token = @auth_token
+    @user.save
+
+    { "Authorization" => command.result }
+  end
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # ServicesController. Be sure to keep this updated too.
@@ -43,6 +58,7 @@ RSpec.describe Api::ServicesController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
+      @request.headers.merge! authenticated_header
       service = Service.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
@@ -51,6 +67,7 @@ RSpec.describe Api::ServicesController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
+      @request.headers.merge! authenticated_header
       service = Service.create! valid_attributes
       get :show, params: {id: service.to_param}, session: valid_session
       expect(response).to be_success
@@ -60,23 +77,23 @@ RSpec.describe Api::ServicesController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Service" do
+        @request.headers.merge! authenticated_header
         expect {
           post :create, params: {service: valid_attributes}, session: valid_session
         }.to change(Service, :count).by(1)
       end
 
       it "renders a JSON response with the new service" do
-
+        @request.headers.merge! authenticated_header
         post :create, params: {service: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json')
-        expect(response.location).to eq(service_url(Service.last))
       end
     end
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new service" do
-
+        @request.headers.merge! authenticated_header
         post :create, params: {service: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
@@ -87,10 +104,11 @@ RSpec.describe Api::ServicesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:service, package_name: "name")
       }
 
       it "updates the requested service" do
+        @request.headers.merge! authenticated_header
         service = Service.create! valid_attributes
         put :update, params: {id: service.to_param, service: new_attributes}, session: valid_session
         service.reload
@@ -98,6 +116,7 @@ RSpec.describe Api::ServicesController, type: :controller do
       end
 
       it "renders a JSON response with the service" do
+        @request.headers.merge! authenticated_header
         service = Service.create! valid_attributes
 
         put :update, params: {id: service.to_param, service: valid_attributes}, session: valid_session
@@ -108,6 +127,7 @@ RSpec.describe Api::ServicesController, type: :controller do
 
     context "with invalid params" do
       it "renders a JSON response with errors for the service" do
+        @request.headers.merge! authenticated_header
         service = Service.create! valid_attributes
 
         put :update, params: {id: service.to_param, service: invalid_attributes}, session: valid_session
@@ -119,6 +139,7 @@ RSpec.describe Api::ServicesController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested service" do
+      @request.headers.merge! authenticated_header
       service = Service.create! valid_attributes
       expect {
         delete :destroy, params: {id: service.to_param}, session: valid_session
