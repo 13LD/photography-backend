@@ -18,6 +18,14 @@ class Api::ApidocsController < Api::BaseController
       end
     end
     tag do
+      key :name, 'Service'
+      key :description, 'Service operations'
+      externalDocs do
+        key :description, 'Find more info here'
+        key :url, 'https://swagger.io'
+      end
+    end
+    tag do
       key :name, 'Photo'
       key :description, 'Photo operations'
       externalDocs do
@@ -77,6 +85,8 @@ class Api::ApidocsController < Api::BaseController
 
 
   SWAGGERED_CLASSES = [
+      Api::ServicesController,
+      Service,
       Api::PhotosController,
       Photo,
       Api::TagsController,
