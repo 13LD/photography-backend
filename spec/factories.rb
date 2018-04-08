@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :service_item do
+    description "MyString"
+    service nil
+  end
+
+  factory :service do
+    package_name "MyString"
+  end
 
 
 

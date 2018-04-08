@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
+  resources :service_items
+  resources :services
   namespace :api do
     resources :auth_tokens
     resources :users
