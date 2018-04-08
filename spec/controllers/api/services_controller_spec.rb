@@ -23,7 +23,7 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe ServicesController, type: :controller do
+RSpec.describe Api::ServicesController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Service. As you add validations to Service, be sure to
