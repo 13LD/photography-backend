@@ -16,9 +16,12 @@ class Api::ServiceItemsController < Api::BaseController
 
   # POST /service_items
   def create
+
     @service_item = ServiceItem.new(service_item_params)
 
     if @service_item.save
+      @service = Service.find(@service_item.service_id)
+      @service.service_items << @service_item
       render json: @service_item, status: :created
     else
       render json: @service_item.errors, status: :unprocessable_entity

@@ -80,6 +80,7 @@ RSpec.describe Api::ServiceItemsController, type: :controller do
       it "creates a new ServiceItem" do
         @request.headers.merge! authenticated_header
         @service = create(:service)
+        @service.save
         expect {
           post :create, params: {service_item: attributes_for(:service_item, service_id: @service.id)}, session: valid_session
         }.to change(ServiceItem, :count).by(1)
