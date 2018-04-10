@@ -1,6 +1,6 @@
 class Api::EquipmentController < Api::BaseController
   before_action :set_equipment, only: [:show, :update, :destroy]
-
+  include Api::Concerns::Swaggers::EquipmentSwaggers
   # GET /equipment
   def index
     @equipment = Equipment.all

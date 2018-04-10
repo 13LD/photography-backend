@@ -1,27 +1,27 @@
 module Api::Concerns::Swaggers
-  module ServiceSwaggers
+  module EquipmentSwaggers
     extend ActiveSupport::Concern
     include Swagger::Blocks
     included do
 
-      swagger_path '/api/services' do
+      swagger_path '/api/equipment' do
         operation :get do
-          key :description, 'List of services'
-          key :operationId, 'Services'
+          key :description, 'List of Equipments'
+          key :operationId, 'Equipments'
           key :produces, [
               'application/json'
           ]
           key :tags, [
-              'Service'
+              'Equipment'
           ]
 
           security do
             key 'Authorization', []
           end
           response 200 do
-            key :description, 'Services fetched successfully'
+            key :description, 'Equipments fetched successfully'
             schema do
-              key :'$ref', :ServiceInput
+              key :'$ref', :EquipmentInput
             end
           end
           response 403 do
@@ -32,21 +32,29 @@ module Api::Concerns::Swaggers
           end
         end
         operation :post do
-          key :description, 'Creates a new Service'
-          key :operationId, 'Add Service'
+          key :description, 'Creates a new Equipment'
+          key :operationId, 'Add Equipment'
           key :produces, [
               'application/json'
           ]
           key :tags, [
-              'Service'
+              'Equipment'
           ]
           parameter do
-            key :name, 'service[package_name]'
+            key :name, 'equipment[name]'
             key :in, :formData
-            key :description, 'Package Name'
+            key :description, 'Equipment Name'
             key :required, false
             key :type, :string
-            key :'$ref', :ServiceInput
+            key :'$ref', :EquipmentInput
+          end
+          parameter do
+            key :name, 'equipment[description]'
+            key :in, :formData
+            key :description, 'Equipment description'
+            key :required, false
+            key :type, :string
+            key :'$ref', :EquipmentInput
           end
 
 
@@ -54,15 +62,15 @@ module Api::Concerns::Swaggers
             key 'Authorization', []
           end
           response 200 do
-            key :description, 'Service created successfully'
+            key :description, 'Equipment created successfully'
             schema do
-              key :'$ref', :ServiceInput
+              key :'$ref', :EquipmentInput
             end
           end
           response 403 do
             key :description, 'Permission denied'
             schema do
-              key :'$ref', :ServiceInput
+              key :'$ref', :EquipmentInput
             end
           end
           response 422 do
@@ -74,17 +82,17 @@ module Api::Concerns::Swaggers
         end
       end
 
-      swagger_path '/api/services/{id}' do
+      swagger_path '/api/equipment/{id}' do
         operation :get do
-          key :description, 'Returns a single Service'
-          key :operationId, 'find Service By Id'
+          key :description, 'Returns a single Equipment'
+          key :operationId, 'find Equipment By Id'
           key :tags, [
-              'Service'
+              'Equipment'
           ]
           parameter do
             key :name, :id
             key :in, :path
-            key :description, 'ID of Service to fetch'
+            key :description, 'ID of Equipment to fetch'
             key :required, true
             key :type, :integer
             key :format, :int64
@@ -95,7 +103,7 @@ module Api::Concerns::Swaggers
           response 200 do
             key :description, 'Service fetched successfully'
             schema do
-              key :'$ref', :ServiceInput
+              key :'$ref', :EquipmentInput
             end
           end
           response 403 do
@@ -106,10 +114,10 @@ module Api::Concerns::Swaggers
           end
         end
         operation :put do
-          key :description, 'Update a Service'
-          key :operationId, 'Update Service'
+          key :description, 'Update a Equipment'
+          key :operationId, 'Update Equipment'
           key :tags, [
-              'Service'
+              'Equipment'
           ]
           parameter do
             key :name, :id
@@ -120,12 +128,20 @@ module Api::Concerns::Swaggers
             key :format, :int64
           end
           parameter do
-            key :name, 'service[package_name]'
+            key :name, 'equipment[name]'
             key :in, :formData
-            key :description, 'Package Name'
+            key :description, 'Equipment Name'
             key :required, false
             key :type, :string
-            key :'$ref', :ServiceInput
+            key :'$ref', :EquipmentInput
+          end
+          parameter do
+            key :name, 'equipment[description]'
+            key :in, :formData
+            key :description, 'Equipment description'
+            key :required, false
+            key :type, :string
+            key :'$ref', :EquipmentInput
           end
 
 
@@ -133,9 +149,9 @@ module Api::Concerns::Swaggers
             key 'Authorization', []
           end
           response 200 do
-            key :description, 'Service updated successfully'
+            key :description, 'Equipment updated successfully'
             schema do
-              key :'$ref', :ServiceInput
+              key :'$ref', :EquipmentInput
             end
           end
           response 403 do
@@ -152,15 +168,15 @@ module Api::Concerns::Swaggers
           end
         end
         operation :delete do
-          key :description, 'Delete Service'
-          key :operationId, 'delete Service'
+          key :description, 'Delete Equipment'
+          key :operationId, 'delete Equipment'
           key :tags, [
-              'Service'
+              'Equipment'
           ]
           parameter do
             key :name, :id
             key :in, :path
-            key :description, 'ID of Service to delete'
+            key :description, 'ID of Equipment to delete'
             key :required, true
             key :type, :integer
             key :format, :int64
@@ -169,9 +185,9 @@ module Api::Concerns::Swaggers
             key 'Authorization', []
           end
           response 200 do
-            key :description, 'Service Deleted Successfully'
+            key :description, 'Equipment Deleted Successfully'
             schema do
-              key :'$ref', :Service
+              key :'$ref', :Equipment
             end
           end
           response 403 do
