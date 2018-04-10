@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
+    resources :equipment
     resources :service_items
     resources :services
     resources :auth_tokens

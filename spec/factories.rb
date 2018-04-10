@@ -1,4 +1,8 @@
 FactoryBot.define do
+  factory :equipment do
+    name "MyString"
+    description "MyString"
+  end
 
   factory :auth_token do
     token "MyString"
