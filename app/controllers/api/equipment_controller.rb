@@ -18,7 +18,7 @@ class Api::EquipmentController < Api::BaseController
     @equipment = Equipment.new(equipment_params)
 
     if @equipment.save
-      render json: @equipment, status: :created, location: @equipment
+      render json: @equipment, status: :created
     else
       render json: @equipment.errors, status: :unprocessable_entity
     end
