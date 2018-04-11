@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :contact do
+    email "MyString"
+    phone1 "MyString"
+    phone2 "MyString"
+  end
   factory :equipment do
     name "MyString"
     description "MyString"
