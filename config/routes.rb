@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :contacts
   namespace :api do
+    resources :contacts
+
     resources :equipment
     resources :service_items
     resources :services
