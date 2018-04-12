@@ -29,12 +29,28 @@ RSpec.describe Api::ContactsController, type: :controller do
   # Contact. As you add validations to Contact, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:contact)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:contact, email: " ")
   }
+
+  def authenticated_header
+    @user = create(:user)
+    @user.save
+    command = AuthenticateUser.call(@user.email, @user.password)
+    @auth_token = AuthToken.new(
+        token: command.result,
+        user_id: @user.id
+    )
+
+    @auth_token.save
+    @user.auth_token = @auth_token
+    @user.save
+
+    { "Authorization" => command.result }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -43,6 +59,7 @@ RSpec.describe Api::ContactsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
+      @request.headers.merge! authenticated_header
       contact = Contact.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
@@ -51,6 +68,7 @@ RSpec.describe Api::ContactsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
+      @request.headers.merge! authenticated_header
       contact = Contact.create! valid_attributes
       get :show, params: {id: contact.to_param}, session: valid_session
       expect(response).to be_success
@@ -60,23 +78,23 @@ RSpec.describe Api::ContactsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Contact" do
+        @request.headers.merge! authenticated_header
         expect {
           post :create, params: {contact: valid_attributes}, session: valid_session
         }.to change(Contact, :count).by(1)
       end
 
       it "renders a JSON response with the new contact" do
-
+        @request.headers.merge! authenticated_header
         post :create, params: {contact: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json')
-        expect(response.location).to eq(contact_url(Contact.last))
       end
     end
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new contact" do
-
+        @request.headers.merge! authenticated_header
         post :create, params: {contact: invalid_attributes}, session: valid_session
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq('application/json')
@@ -87,17 +105,19 @@ RSpec.describe Api::ContactsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:contact, email: "d.lysohor@gmail.com")
       }
 
       it "updates the requested contact" do
+        @request.headers.merge! authenticated_header
         contact = Contact.create! valid_attributes
         put :update, params: {id: contact.to_param, contact: new_attributes}, session: valid_session
         contact.reload
-        skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the contact" do
+        @request.headers.merge! authenticated_header
+
         contact = Contact.create! valid_attributes
 
         put :update, params: {id: contact.to_param, contact: valid_attributes}, session: valid_session
@@ -108,6 +128,8 @@ RSpec.describe Api::ContactsController, type: :controller do
 
     context "with invalid params" do
       it "renders a JSON response with errors for the contact" do
+        @request.headers.merge! authenticated_header
+
         contact = Contact.create! valid_attributes
 
         put :update, params: {id: contact.to_param, contact: invalid_attributes}, session: valid_session
@@ -119,6 +141,8 @@ RSpec.describe Api::ContactsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested contact" do
+      @request.headers.merge! authenticated_header
+
       contact = Contact.create! valid_attributes
       expect {
         delete :destroy, params: {id: contact.to_param}, session: valid_session

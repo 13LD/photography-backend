@@ -18,7 +18,7 @@ class Api::ContactsController < Api::BaseController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      render json: @contact, status: :created, location: @contact
+      render json: @contact, status: :created
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
