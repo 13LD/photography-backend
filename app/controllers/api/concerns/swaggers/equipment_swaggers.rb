@@ -44,7 +44,7 @@ module Api::Concerns::Swaggers
             key :name, 'equipment[name]'
             key :in, :formData
             key :description, 'Equipment Name'
-            key :required, false
+            key :required, true
             key :type, :string
             key :'$ref', :EquipmentInput
           end
@@ -52,7 +52,7 @@ module Api::Concerns::Swaggers
             key :name, 'equipment[description]'
             key :in, :formData
             key :description, 'Equipment description'
-            key :required, false
+            key :required, true
             key :type, :string
             key :'$ref', :EquipmentInput
           end

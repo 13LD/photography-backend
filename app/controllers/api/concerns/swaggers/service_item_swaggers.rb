@@ -43,7 +43,7 @@ module Api::Concerns::Swaggers
             key :name, 'service_item[description]'
             key :in, :query
             key :description, 'Comment title'
-            key :required, false
+            key :required, true
             key :type, :string
             key :'$ref', :ServiceItemInput
           end

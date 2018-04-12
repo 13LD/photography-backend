@@ -6,15 +6,22 @@ class Api::ApidocsController < Api::BaseController
     key :swagger, '2.0'
     info do
       key :version, '2.0.0'
-      key :title, 'Swagger Userstore'
-      key :description, 'A sample API that uses a userstore as an example to ' \
-                        'demonstrate features in the swagger-2.0 specification'
+      key :title, 'Photography backend'
+      key :description, 'A sample API for photography website'
       key :termsOfService, 'http://helloreverb.com/terms/'
       contact do
-        key :name, 'Wordnik API Team'
+        key :name, 'Dmytro Lysohor'
       end
       license do
         key :name, 'MIT'
+      end
+    end
+    tag do
+      key :name, 'Contact'
+      key :description, 'Contact operations'
+      externalDocs do
+        key :description, 'Find more info here'
+        key :url, 'https://swagger.io'
       end
     end
     tag do
@@ -101,6 +108,8 @@ class Api::ApidocsController < Api::BaseController
 
 
   SWAGGERED_CLASSES = [
+      Api::ContactsController,
+      Contact,
       Api::EquipmentController,
       Equipment,
       Api::ServiceItemsController,

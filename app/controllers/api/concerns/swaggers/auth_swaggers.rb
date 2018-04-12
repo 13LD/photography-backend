@@ -18,7 +18,7 @@ module Api::Concerns::Swaggers
             key :name, 'email'
             key :in, :query
             key :description, 'Auth email'
-            key :required, false
+            key :required, true
             key :type, :string
             key :'$ref', :AuthInput
           end
@@ -70,7 +70,7 @@ module Api::Concerns::Swaggers
             key :name, 'email'
             key :in, :query
             key :description, 'Auth email'
-            key :required, false
+            key :required, true
             key :type, :string
             key :'$ref', :AuthInput
           end

@@ -44,7 +44,7 @@ module Api::Concerns::Swaggers
             key :name, 'tag[tag_name]'
             key :in, :formData
             key :description, 'Tag Name'
-            key :required, false
+            key :required, true
             key :type, :string
             key :'$ref', :TagInput
           end
@@ -123,7 +123,7 @@ module Api::Concerns::Swaggers
             key :name, 'tag[tag_name]'
             key :in, :formData
             key :description, 'Tag Name'
-            key :required, false
+            key :required, true
             key :type, :string
             key :'$ref', :TagInput
           end
